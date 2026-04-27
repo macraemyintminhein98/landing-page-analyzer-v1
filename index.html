@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Landing Page Analyzer</title>
+    <meta name="description" content="Analyze your landing page copy for better conversions.">
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f7f6; color: #333; }
+        .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        h1 { color: #2c3e50; text-align: center; margin-bottom: 25px; font-size: 2.2em; }
+        p { line-height: 1.6; color: #555; text-align: center; margin-bottom: 30px; font-size: 1.1em; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        label { font-weight: bold; color: #34495e; margin-bottom: 5px; }
+        input[type="url"], textarea { padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 1em; width: 100%; box-sizing: border-box; }
+        input[type="url"]:focus, textarea:focus { border-color: #3498db; outline: none; box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); }
+        button { background-color: #28a745; color: white; padding: 15px 25px; border: none; border-radius: 6px; cursor: pointer; font-size: 1.1em; font-weight: bold; transition: background-color 0.3s ease; width: fit-content; margin: 20px auto 0 auto; display: block; }
+        button:hover { background-color: #218838; }
+        .price { text-align: center; font-size: 1.6em; font-weight: bold; color: #e67e22; margin-top: 30px; }
+        .footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Elevate Your Landing Page</h1>
+        <p>Get instant, actionable feedback on your copy to boost conversions.</p>
+        <form id="analysisForm">
+            <label for="pageInput">Enter URL or Paste Text:</label>
+            <input type="url" id="pageInput" name="pageInput" placeholder="https://yourpage.com or paste text..." required>
+            <p class="price">Only $9.99 per analysis</p>
+            <button type="submit">Analyze Now</button>
+        </form>
+        <div id="results" style="display:none; margin-top: 30px; background-color: #e8f5e9; padding: 20px; border-radius: 8px; border: 1px solid #c8e6c9;">
+            <h2>Analysis Results</h2>
+            <p id="resultContent"></p>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2023 Apex Landing Page Analyzer. All rights reserved.
+    </div>
+    <script>
+        // Placeholder for future Stripe integration & analysis submission
+        document.getElementById('analysisForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const input = document.getElementById('pageInput').value;
+            // In a real app, this would securely call your backend/Stripe
+            alert('Demo Mode: Submitting for analysis. In a live version, you would be redirected to Stripe for payment and then see results.');
+            // For demo purposes, simulate a result
+            document.getElementById('resultContent').innerText = `Thank you for submitting: "${input.substring(0, 50)}...". Your detailed analysis will be available shortly after payment.`;
+            document.getElementById('results').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
